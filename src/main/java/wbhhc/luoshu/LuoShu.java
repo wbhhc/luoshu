@@ -40,7 +40,6 @@ public class LuoShu {
     private Integer[][] arr=new Integer[3][3];
 
     public LuoShu() {
-//        genArray();
     }
 
     public void setDefault() {
@@ -70,7 +69,6 @@ public class LuoShu {
         this.row3col2 = row3col2;
         this.row3col3 = row3col3;
 
-//        genArray();
     }
 
     public boolean doValied() {
@@ -155,6 +153,7 @@ public class LuoShu {
 
     @Override
     public String toString() {
+        genArray();
         return  " - - - \n"
                 +"|" + arr[0][0] + "|" + arr[0][1] + "|" + arr[0][2] + "|\n"
                 +" - - - \n"
@@ -192,7 +191,7 @@ public class LuoShu {
             //反复计算超过看门狗则失败
             if(++times>=dog) return false;
         }
-        setFromArr(arr);
+        setFromArr();
 
         if(doValied()) return true;
         return false;
@@ -339,6 +338,7 @@ public class LuoShu {
             }
         }
         arr=newArr;
+        setFromArr();
     }
 
     public Integer[][] getResult(){
@@ -401,10 +401,11 @@ public class LuoShu {
         }
 
         arr=newArr;
+        setFromArr();
         return arr;
     }
 
-    public void setEmpty() {
+    private void setEmpty() {
         this.row1col1 = 0;
         this.row1col2 = 0;
         this.row1col3 = 0;
@@ -417,7 +418,7 @@ public class LuoShu {
         genArray();
     }
 
-    private void setFromArr(Integer[][] arr){
+    private void setFromArr(){
         row1col1=arr[0][0];
         row1col2=arr[0][1];
         row1col3=arr[0][2];
@@ -427,6 +428,5 @@ public class LuoShu {
         row3col1=arr[2][0];
         row3col2=arr[2][1];
         row3col3=arr[2][2];
-
     }
 }

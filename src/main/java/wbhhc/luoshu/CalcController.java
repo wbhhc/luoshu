@@ -13,7 +13,6 @@ public class CalcController {
     @GetMapping("/calc/index")
     public String index(Model model){
         LuoShu luoShu =new LuoShu();
-        luoShu.setEmpty();
         model.addAttribute("msg","");
         model.addAttribute("luoshu", luoShu);
         model.addAttribute("typesubmit","0");
