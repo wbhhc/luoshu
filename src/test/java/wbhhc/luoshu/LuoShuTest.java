@@ -104,11 +104,10 @@ public class LuoShuTest {
         LuoShu luoShu =new LuoShu();
         luoShu.setDefault();
         luoShu.rotate90();
-        Integer[][] arr = luoShu.getResult();
 
-        assertThat(4,is(arr[0][2]));
-        assertThat(9,is(arr[1][2]));
-        assertThat(2,is(arr[2][2]));
+        assertThat(4,is(luoShu.getRow1col3()));
+        assertThat(9,is(luoShu.getRow2col3()));
+        assertThat(2,is(luoShu.getRow3col3()));
 
         System.out.println(luoShu.toString());
     }
