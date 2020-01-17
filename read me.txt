@@ -1,0 +1,12 @@
+#常用的命令行：
+mvn package
+mvn clean install
+mvn clean install -Dmaven.test.skip=true
+mvn install
+mvn test
+mvn clean package -Dmaven.test.skip=true
+mvn install -pl [module] -am -Dmaven.test.skip=true
+
+
+#上传到MAVEN
+mvn deploy -e -Dmaven.test.skip=true

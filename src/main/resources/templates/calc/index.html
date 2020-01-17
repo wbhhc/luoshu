@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body >
+<form action="/calc/index" method="post" >
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <select th:field="*{luoshu.row1col1}" >
+                        <option value="0">空</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td>
+                    <select th:field="*{luoshu.row1col2}">
+                        <option value="0">空</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td>
+                    <select  th:field="*{luoshu.row1col3}">
+                        <option value="0">空</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select  th:field="*{luoshu.row2col1}">
+                        <option value="0">空</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td>
+                    <input  type="text" th:field="*{luoshu.row2col2}" readonly="readonly" style="width: 30px"/>
+                </td>
+                <td>
+                    <select  th:field="*{luoshu.row2col3}">
+                        <option value="0">空</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select  th:field="*{luoshu.row3col1}">
+                        <option value="0">空</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td>
+                    <select  th:field="*{luoshu.row3col2}">
+                        <option value="0">空</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+                <td>
+                    <select  th:field="*{luoshu.row3col3}">
+                        <option value="0">空</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <select name="typesubmit" th:value="${typesubmit}" >
+            <option value="0" th:selected="${typesubmit eq '0'}">计算</option>
+            <option value="1" th:selected="${typesubmit eq '1'}">旋转</option>
+        </select>
+        <input type="submit" value="提交" />
+        <input type="button" value="清空" onclick="clearinput()" />
+    </div>
+</form>
+<script type="text/javascript">
+
+    var msg='[[${msg}]]';
+    if(msg!='')
+        alert(msg);
+
+    function clearinput(){
+        window.location.href=window.location.href;
+    }
+
+</script>
+</body>
+</html>
