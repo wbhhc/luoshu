@@ -1,6 +1,5 @@
 package wbhhc.luoshu;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -341,14 +340,14 @@ public class LuoShu {
         setFromArr();
     }
 
-    public Integer[][] getResult(){
-        return arr;
+    public LuoShu getResult(){
+        return this;
     }
 
     /**
      * 顺时针90度旋转
      */
-    public Integer[][] rotate90for4() {
+    public LuoShu rotate90for4() {
 
         genArray();
 
@@ -402,7 +401,7 @@ public class LuoShu {
 
         arr=newArr;
         setFromArr();
-        return arr;
+        return this;
     }
 
     private void setEmpty() {
