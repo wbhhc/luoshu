@@ -4,8 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CalcController {
@@ -14,30 +12,31 @@ public class CalcController {
 
     @GetMapping("/calc/index")
     public String index(Model model){
-        LuoShu luoShu=new LuoShu();
+        LuoShu luoShu =new LuoShu();
+        luoShu.setEmpty();
         model.addAttribute("msg","");
-        model.addAttribute("luoshu",luoShu);
+        model.addAttribute("luoshu", luoShu);
         model.addAttribute("typesubmit","0");
         return "calc/index";
     }
 
     @PostMapping("/calc/index")
-    public String submit(LuoShu luoShu,String typesubmit,
+    public String submit(LuoShu luoShu, String typesubmit,
                          Model model){
 
 
         Integer[][] arr=new Integer[3][3];
         String msg=null;
         try{
-            Calc calc=new Calc(luoShu.getRow1col1(),luoShu.getRow1col2(),luoShu.getRow1col3(),
-                    luoShu.getRow2col1(),luoShu.getRow2col2(),luoShu.getRow2col3(),
-                    luoShu.getRow3col1(),luoShu.getRow3col2(),luoShu.getRow3col3());
-            if(!calc.autoFill())
+//            LuoShu luoShu =new LuoShu(luoShu1.getRow1col1(), luoShu1.getRow1col2(), luoShu1.getRow1col3(),
+//                    luoShu1.getRow2col1(), luoShu1.getRow2col2(), luoShu1.getRow2col3(),
+//                    luoShu1.getRow3col1(), luoShu1.getRow3col2(), luoShu1.getRow3col3());
+            if(!luoShu.autoFill())
                 throw new RuntimeException("输入的数字有误！");
             if("1".equals(typesubmit)){
-                calc.rotate90();
+                luoShu.rotate90();
             }
-            arr=calc.getResult();
+            arr= luoShu.getResult();
 
             luoShu.setRow1col1(arr[0][0]);
             luoShu.setRow1col2(arr[0][1]);
@@ -54,7 +53,7 @@ public class CalcController {
         }
 
 
-        model.addAttribute("luoshu",luoShu);
+        model.addAttribute("luoshu", luoShu);
         model.addAttribute("msg",msg);
         model.addAttribute("typesubmit",typesubmit);
         return "calc/index";
