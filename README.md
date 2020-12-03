@@ -21,6 +21,8 @@
     
 2. 启动web应用程序
 
+    cd web
+
     mvn spring-boot:run 
 
 3. 浏览器输入
