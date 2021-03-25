@@ -65,9 +65,6 @@ public class LuoShuTest {
         System.out.println(luoShu.toString());
     }
 
-    /**
-     * 旋转角度顺时针90度
-     */
     @Test
     public void autofill_rotating90() {
         LuoShu luoShu =new LuoShu( 0,3,0,
@@ -82,9 +79,6 @@ public class LuoShuTest {
         System.out.println(luoShu.toString());
     }
 
-    /**
-     * 旋转角度180度
-     */
     @Test
     public void autofill_rotating180() {
         LuoShu luoShu =new LuoShu( 0,0,0,
@@ -108,6 +102,19 @@ public class LuoShuTest {
         assertThat(4,is(luoShu.getRow1col3()));
         assertThat(9,is(luoShu.getRow2col3()));
         assertThat(2,is(luoShu.getRow3col3()));
+
+        System.out.println(luoShu.toString());
+    }
+
+    @Test
+    public void inverse90() {
+        LuoShu luoShu =new LuoShu();
+        luoShu.setDefault();
+        luoShu.inverse90();
+
+        assertThat(4,is(luoShu.getRow3col1()));
+        assertThat(9,is(luoShu.getRow2col1()));
+        assertThat(2,is(luoShu.getRow1col1()));
 
         System.out.println(luoShu.toString());
     }
