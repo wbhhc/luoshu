@@ -7,6 +7,11 @@ import static org.junit.Assert.*;
 
 public class LuoShuTest {
 
+    //default
+    //        |4|9|2|
+    //        |3|5|7|
+    //        |8|1|6|
+
     @Test
     public void doValied() {
         LuoShu luoShu =new LuoShu();
@@ -18,6 +23,7 @@ public class LuoShuTest {
         System.out.println("结果："+(res?"成功":"失败"));
 
         System.out.println(luoShu.toString());
+
     }
 
     @Test
