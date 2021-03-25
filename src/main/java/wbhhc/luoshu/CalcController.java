@@ -26,9 +26,10 @@ public class CalcController {
         try{
             if(!luoShu.autoFill())
                 throw new RuntimeException("输入的数字有误！");
-            if("1".equals(typesubmit)){
+            if("1".equals(typesubmit))
                 luoShu.rotate90();
-            }
+            if("2".equals(typesubmit))
+                luoShu.inverse90();
         }catch (Exception ex){
             msg=ex.getMessage();
         }

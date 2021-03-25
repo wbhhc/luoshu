@@ -340,6 +340,20 @@ public class LuoShu {
         setFromArr();
     }
 
+    public void inverse90(){
+        genArray();
+
+        Integer[][] newArr=new Integer[arr.length][arr[0].length];
+        int n=2;//最大偏移量=宽度-1
+        for (int i=0;i<arr.length;i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                newArr[n-j][i]=arr[i][j];
+            }
+        }
+        arr=newArr;
+        setFromArr();
+    }
+
     public LuoShu getResult(){
         return this;
     }

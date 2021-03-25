@@ -126,8 +126,10 @@
     <div>
         <select name="typesubmit" th:value="${typesubmit}" >
             <option value="0" th:selected="${typesubmit eq '0'}">计算</option>
-            <option value="1" th:selected="${typesubmit eq '1'}">旋转</option>
+            <option value="1" th:selected="${typesubmit eq '1'}">顺时针旋转</option>
+            <option value="2" th:selected="${typesubmit eq '2'}">逆时针旋转</option>
         </select>
+        <br/>
         <input type="submit" value="提交" />
         <input type="button" value="清空" onclick="clearinput()" />
     </div>
